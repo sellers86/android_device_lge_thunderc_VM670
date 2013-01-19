@@ -4,6 +4,7 @@ PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi 
 
 $(call inherit-product-if-exists, vendor/lge/thunderc/thunderc-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)
 $(call inherit-product, device/lge/common/device.mk)
 
 # Full-featured build of the Open-Source
@@ -29,7 +30,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
-    librs_jni
+    librs_jni \
+    libqdutils
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=BobZ_mr1-staging
 PRODUCT_NAME := full_thunderc
